@@ -1,9 +1,11 @@
 /*
-
-
-
-
-
+=============================================================
+	DDL SCRIPT: CREATE SILVER TABLe
+=============================================================
+	SCRIPT PURPOSE:
+		This Script will create table in "SILVER" schema, dropping exist table and receate table..
+		Run this script when re-define DDL of table with new DDL.
+		WARNING: THIS SCRIPT WILL DELETE ALL DATA IN TABLE.
 */
 IF OBJECT_ID('SILVER.crm_cust_info','U') IS NOT NULL
 	DROP TABLE SILVER.crm_cust_info
