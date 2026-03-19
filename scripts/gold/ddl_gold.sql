@@ -3,8 +3,15 @@
 Create Dimesion table for customer & product tables, Fact table for 
 ========================================================
 Script Purpose:
+	- Transform data from silver layer 
+	- Create Dimsion & fact table
+	- Make column name friendly to understand
 
-
+Usage:
+ 	-Can use for Data analysis, and summary for Report
+*/
+/*
+--------------------------dim_customer----------------------
 */
 CREATE VIEW gold.dim_customer as
 SELECT
@@ -26,7 +33,9 @@ LEFT JOIN silver.erp_cust_az12 ca
 on ci.cst_key=ca.CID
 LEFT JOIN silver.erp_loc_A101 la
 on ci.cst_key = la.cid
-
+/*
+--------------------------dim_product---------------------
+*/
 CREATE VIEW gold.dim_product as
 SELECT 
        ROW_NUMBER() OVER(ORDER BY pn.prd_start_dt,pn.prd_key) as product_key,
@@ -44,7 +53,9 @@ FROM silver.crm_prd_info pn
 LEFT JOIN silver.erp_px_cat_g1v2 pc  
 ON pc.ID = pn.cat_id
 WHERE prd_end_dt IS NULL
-
+/*
+--------------------------fact_sales----------------------
+*/
 CREATE VIEW gold.fact_sales as
 SELECT 
 	sd.sls_ord_num as order_number,
