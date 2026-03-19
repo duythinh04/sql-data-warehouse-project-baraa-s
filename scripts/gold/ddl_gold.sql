@@ -3,16 +3,19 @@
 Create Dimesion table for customer & product tables, Fact table for 
 ========================================================
 Script Purpose:
-	- Transform data from silver layer 
-	- Create Dimsion & fact table
-	- Make column name friendly to understand
+	This script will drop existing and re-create view for the Gold layer in data warehouse.
+	The Gold layer represent the final dimension and fact tables 
 
+	Each view performs transformations and combies data from silver layer
+to produce a clean, enriched, and business-ready dataset
 Usage:
- 	-Can use for Data analysis, and summary for Report
+ 	-These view can be queried directly for analytics and reporting
 */
 /*
 --------------------------dim_customer----------------------
 */
+IF OBJECT_ID('gold.dim_customer','V') IS NOT NULL
+	DROP VIEW gold.dim_customer;
 CREATE VIEW gold.dim_customer as
 SELECT
 	ROW_NUMBER() OVER(ORDER BY cst_id) AS customer_key,
@@ -36,6 +39,8 @@ on ci.cst_key = la.cid
 /*
 --------------------------dim_product---------------------
 */
+	IF OBJECT_ID('gold.dim_product','V') IS NOT NULL
+	DROP VIEW gold.dim_product;
 CREATE VIEW gold.dim_product as
 SELECT 
        ROW_NUMBER() OVER(ORDER BY pn.prd_start_dt,pn.prd_key) as product_key,
@@ -56,6 +61,8 @@ WHERE prd_end_dt IS NULL
 /*
 --------------------------fact_sales----------------------
 */
+	IF OBJECT_ID('gold.fact_sales','V') IS NOT NULL
+	DROP VIEW gold.fact_sales;
 CREATE VIEW gold.fact_sales as
 SELECT 
 	sd.sls_ord_num as order_number,
