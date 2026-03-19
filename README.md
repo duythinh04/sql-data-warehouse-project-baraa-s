@@ -1,6 +1,6 @@
 # Project Data WareHouse for learning
 
-Welcome to the **Data Warehouse and Analytics Project** repository! 
+Welcome to the **Data Warehouse Project** repository! 
 The purpose of this project is to learn about SQL, practice what I learned in Baraa's course, and gain a more intuitive understanding of how to build a Data Warehouse from scratch, how the system works, how to optimize the system, and how to analyze data.
 
 This Data Warehouse project will follow the instructions of the course. I will leave the course link below if you would like to refer to it.
@@ -21,15 +21,6 @@ Develop modern data warehouse using SQL Server to consolidate sales data, enabli
 - **Documentation**: Provide clear documentation of the data model to support both bsiness stakeholders and analytics
 
 ---
-
-### BI:Analytics & Reporting (Data Analytics)
-
-#### Objective
-Develop SQL-based analytics to deliver detailed insights into:
-- **Customer Behavior**
-- **Product Performance**
-- **Sales Trends**
-- These insights enpower stakeholders with key business metrics, enabling strategic decision-making.
 
 ---
 
