@@ -21,7 +21,8 @@ Develop modern data warehouse using SQL Server to consolidate sales data, enabli
 - **Documentation**: Provide clear documentation of the data model to support both bsiness stakeholders and analytics
 
 ---
-
+Data Architecture
+![data_architecture](docs/Data Architecture.png)
 ---
 
 ## License
