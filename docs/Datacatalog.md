@@ -11,7 +11,7 @@ The Gold Layer is the business-level data representation, structured to support 
 
 | Column Name      | Data Type     | Description                                                                                   |
 |------------------|---------------|-----------------------------------------------------------------------------------------------|
-| customer_key | BIGINT | Surrogate key uniquely identifying each customer record in dimension table|
+| customer_key | INT | Surrogate key uniquely identifying each customer record in dimension table|
 | customer_id  | INT | Unique numerical identifier assigned to each customer |
 | customer_number |NVARCHAR(50)| Alphanumeric identifier representing the customer, used for tracking and referencing. |
 | customer_firstname | NVARCHAR(50) | The customer's first name, as recorded in system |
@@ -29,7 +29,7 @@ The Gold Layer is the business-level data representation, structured to support 
 
 | Column Name      | Data Type     | Description                                                                                   |
 |------------------|---------------|-----------------------------------------------------------------------------------------------|
-| prodcut_key | BIGINT | Surrogate key uniquely identifying each product record in dimension table|
+| prodcut_key | INT | Surrogate key uniquely identifying each product record in dimension table|
 | product_id  | INT |  A unique identifier assigned to the product used for tracking and referencing |
 | category_id |NVARCHAR(50)| A unique identifier for product's category,linking to its high-level classification|
 | product_code | NVARCHAR(50) | A structured alphanumeric code representing the product, often used for categorization or inventory. |
